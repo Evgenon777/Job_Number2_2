@@ -212,16 +212,6 @@ def parsing():
             max_len = max(len(brands), len(openCardCount), len(addToCartPercent), len(cartToOrderPercent),
                           len(addToCartCount), len(stocksWb), len(nmID), len(name))
 
-
-
-
-
-
-
-
-
-
-
             for i in range(max_len):
                 if i < len(name):
                     combined_list.append(name[i])
@@ -299,7 +289,8 @@ def parsing():
                 sheet.cell(row=row_pi, column=column, value="НАЗВАНИЕ БРЕНДА")
                 sheet.cell(row=row_pi, column=column - 1, value="МЕТРИКА")
                 sheet.cell(row=row_pi, column=column + 1, value="Артикул")
-
+                for i in range(1, 35):
+                    sheet.cell(row=row_pi + 1, column=i, value="--------------------")
                 row_pi += 10
                 if ID in brand_data:
                     data = brand_data[ID]
@@ -351,7 +342,8 @@ def parsing():
                     sheet.cell(row=row_ro, column=column, value=data['Бренд'])
 
                     sheet.cell(row=row_ro, column=column + 1, value=data['ID'])
-
+                    for i in range(1, 35):
+                        sheet.cell(row=row_pi + 1, column=i, value="--------------------")
                     row_ro += 3
                     row_pi += 1
 
