@@ -25,8 +25,6 @@ def parsing():
     API_KEY = os.getenv("API_KEY")
     NUTRA = os.getenv('SECRET_JSON')
     KEY_TABLE = os.getenv('KEY_TABLE')
-    #print(KEY_TABLE)
-
 
     HeaderApiKey1 = {
         'Authorization': f'{API_KEY}',
@@ -247,11 +245,6 @@ def parsing():
                     idol += 1
 
 
-
-            #new_list = [item for item in combined_list if 'Жиросжигатели' not in item]
-
-
-
             print(combined_list)
             print(len(combined_list))
 
@@ -352,7 +345,6 @@ def parsing():
                     row = start_row
                 start_row += 11
             wb.save("analyticWB.xlsx")
-
 
             def CopyFromExcInGsh(): 
                 client = gspread.authorize(credentials)
